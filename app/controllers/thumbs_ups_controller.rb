@@ -33,7 +33,7 @@ class ThumbsUpsController < ApplicationController
     @thumbs_up = ThumbsUp.find(params[:id])
 
     if @thumbs_up.update(thumbs_up_params)
-      head :no_contentz
+      head 200
     else
       render json: @thumbs_up.errors, status: :unprocessable_entity
     end
